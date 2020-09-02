@@ -15,13 +15,13 @@ function App() {
   
   useEffect(() => {
     let result = [];
-    result = filteredProducts[0] ?  filteredProducts.filter(newProduct => newProduct.ingredientIds.join(' ').includes(searchTerm)) : 
+    result = filteredProducts[0] ?  filteredProducts.filter(newProduct => newProduct.ingredientIds.join(' ').toLowerCase().includes(searchTerm)) : 
             newProducts.filter(newProduct => newProduct.ingredientIds.join(' ').toLowerCase().includes(searchTerm));
     setSearchedProducts(result);
   }, [filteredProducts, searchTerm, newProducts])
 
   const handleSearch = (value) => {
-    setSearchTerm(value);
+    setSearchTerm(value.toLowerCase());
   }
 
   const handleFilter = (value) => {
