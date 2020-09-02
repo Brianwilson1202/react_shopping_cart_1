@@ -23,7 +23,7 @@ function SideFilter({handleFilter}) {
       {
         menuItems.map((menuItem, index) => {
           return (
-            <div className='hover:bg-gray-500 hover:text-white pl-5' onClick={handleClickItem} key={index} >{menuItem}</div>
+            <div className='hover:bg-gray-500 hover:text-white pl-5 py-2' onClick={handleClickItem} key={index} >{menuItem}</div>
           )
         })
       }

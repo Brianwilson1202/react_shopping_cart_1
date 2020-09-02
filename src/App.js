@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     let result = [];
     result = filteredProducts[0] ?  filteredProducts.filter(newProduct => newProduct.ingredientIds.join(' ').includes(searchTerm)) : 
-            newProducts.filter(newProduct => newProduct.ingredientIds.join(' ').includes(searchTerm));
+            newProducts.filter(newProduct => newProduct.ingredientIds.join(' ').toLowerCase().includes(searchTerm));
     setSearchedProducts(result);
   }, [filteredProducts, searchTerm, newProducts])
 
