@@ -15,7 +15,8 @@ function App() {
   
   useEffect(() => {
     let result = [];
-    result = filteredProducts[0] ?  filteredProducts.filter(newProduct => newProduct.ingredientIds.join(' ').toLowerCase().includes(searchTerm)) : 
+    result = 
+            filteredProducts[0] ?  filteredProducts.filter(newProduct => newProduct.ingredientIds.join(' ').toLowerCase().includes(searchTerm)) : 
             newProducts.filter(newProduct => newProduct.ingredientIds.join(' ').toLowerCase().includes(searchTerm));
     setSearchedProducts(result);
   }, [filteredProducts, searchTerm, newProducts])
@@ -35,7 +36,6 @@ function App() {
     // console.log('card clicked!', value);
     setSelectedProductNum(selectedProductNum + 1);
   }
-
 
   return (
     <div className="App">
